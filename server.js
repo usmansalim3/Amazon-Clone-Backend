@@ -1,16 +1,6 @@
 // const express=require('express');
 const connect = require('./db');
-// const flicksterRouter=require("./Routers/log/firebaseLog")
-// const moviesRouter=require("./Routers/movies")
-// const cors = require('cors');
-// const app=express();
 
-// app.use(cors());
-// app.use(express.json({limit: '50mb'}));
-
-
-// app.use('/flickster',flicksterRouter);
-// app.use('/movies',moviesRouter)
 
 
 const express = require("express");
@@ -32,17 +22,7 @@ app.listen(3000, () => {
     console.log("Server is running on port");
 });
 connect();
-// mongoose
-//   .connect("mongodb+srv://sujananand:sujan@cluster0.cueelai.mongodb.net/", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((err) => {
-//     console.log("Error connecting to MongoDb", err);
-//   });
+
 
 const User = require("./models/user");
 const Order = require("./models/order");
@@ -53,35 +33,6 @@ const Review = require('./models/reviews');
 app.get("/",(req,res)=>{
   res.json({message:"done"})
 })
-// const sendVerificationEmail = async (email, verificationToken) => {
-//   // Create a Nodemailer transporter
-//   const transporter = nodemailer.createTransport({
-//     // Configure the email service or SMTP details here
-//     service: "gmail",
-//     auth: {
-//       user: "sujananand0@gmail.com",
-//       pass: "wkkjjprzkqxtboju",
-//     },
-//   });
-
-//   // Compose the email message
-//   const mailOptions = {
-//     from: "amazon.com",
-//     to: email,
-//     subject: "Email Verification",
-//     text: `Please click the following link to verify your email: http://localhost:8000/verify/${verificationToken}`,
-//   };
-
-//   // Send the email
-//   try {
-//     await transporter.sendMail(mailOptions);
-//     console.log("Verification email sent successfully");
-//   } catch (error) {
-//     console.error("Error sending verification email:", error);
-//   }
-// };
-// Register a new user
-// ... existing imports and setup ...
 
 app.post("/register", async (req, res) => {
     console.log("her")
